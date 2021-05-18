@@ -11,7 +11,7 @@ function factorial(n) {
 
   let retVal = n;
 
-  for( let i = ( n - 1); i > 0; --i )
+  for( let i = ( n - 1); i > 1; --i ) // Mutiply 1 has no sence
     retVal *= i;
 
   return retVal;
