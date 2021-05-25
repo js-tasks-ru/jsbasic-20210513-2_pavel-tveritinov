@@ -1,3 +1,6 @@
 function namify(users) {
-  // ваш код...
+  if( !Array.isArray( users ) )
+    return null;
+
+  return users.map( (user)=>{ return user.name; });
 }
