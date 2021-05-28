@@ -13,7 +13,6 @@ function highlight(table) {
 
   for( let r = 0; r < body.rows.length; ++ r) {
 
-    let name = body.rows[ r ].cells[ 0 ].textContent;
     if( body.rows[ r ].cells.length >= statusIndex ) {
       if( body.rows[ r ].cells[ statusIndex ].dataset.available === undefined ){
         body.rows[ r ].hidden = true;
