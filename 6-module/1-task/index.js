@@ -29,7 +29,9 @@ export default class UserTable {
     }
 
     names.push( this._deleteCol ); // Close button
-    let header = '<tr>' + names.map( value => `<th>${value}</th>` ).join( '' ) + '</tr>';
+
+    let namesWrapped = names.map( value => `<th>${value}</th>` ).join( '' );
+    let header = `<tr>${namesWrapped}</tr>`;
     headerElem.innerHTML = header;
     return names;
   }
@@ -51,7 +53,7 @@ export default class UserTable {
       for( let item of this._columns ) {
         let nextCel = userRow.insertCell();
         if( item === this._deleteCol ) {
-          var delButton = document.createElement('button');
+          let delButton = document.createElement('button');
           delButton.textContent=`[X]`;
           nextCel.appendChild(delButton);
         } else {
