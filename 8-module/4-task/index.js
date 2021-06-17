@@ -152,7 +152,7 @@ export default class Cart {
 
           // Элемент с общей стоимостью всех единиц этого товара
           let productPrice = this.rootBody.querySelector(`[data-product-id="${productId}"] .cart-product__price`);
-          productPrice.textContent =`€${( cartItem.product.price * cartItem.count).toFixed(2) }`
+          productPrice.textContent =`€${cartItem.product.price.toFixed(2) }`
 
           // Элемент с суммарной стоимостью всех товаров
           let infoPrice = this.rootBody.querySelector(`.cart-buttons__info-price`);
@@ -189,7 +189,7 @@ export default class Cart {
         </p>`;
         this.modal.setBody( successItem );
       } else {
-        alert( 'Unable to send the order. Please, try again later.')
+        //alert( 'Unable to send the order. Please, try again later.')
       }
     });
   };
