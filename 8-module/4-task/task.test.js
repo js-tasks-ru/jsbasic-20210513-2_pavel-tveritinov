@@ -157,7 +157,7 @@ describe('8-module-4-task', () => {
         fetch = jasmine.createSpy('fetch');
         fetch.and.returnValue(fetchPromise);
 
-        let submitEvent = new Event('submit');
+        let submitEvent = new Event('submit', { bubbles: true });
         cartForm = document.querySelector('.cart-form');
 
         submitPreventDefaultSpy = spyOn(submitEvent, 'preventDefault');
