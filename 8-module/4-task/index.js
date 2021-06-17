@@ -77,7 +77,7 @@ export default class Cart {
               <img src="/assets/images/icons/square-plus-icon.svg" alt="plus">
             </button>
           </div>
-          <div class="cart-product__price">€${product.price.toFixed(2)}</div>
+          <div class="cart-product__price">€${(product.price * count).toFixed(2)}</div>
         </div>
       </div>
     </div>`);
@@ -152,12 +152,12 @@ export default class Cart {
 
           // Элемент с общей стоимостью всех единиц этого товара
           let productPrice = this.rootBody.querySelector(`[data-product-id="${productId}"] .cart-product__price`);
-          productPrice.textContent =`€${cartItem.product.price.toFixed(2) }`
-
-          // Элемент с суммарной стоимостью всех товаров
-          let infoPrice = this.rootBody.querySelector(`.cart-buttons__info-price`);
-          infoPrice.innerHTML = `€${this.getTotalPrice().toFixed(2)}`;
+          productPrice.textContent =`€${(cartItem.product.price* cartItem.count).toFixed(2) }`
         }
+
+        // Элемент с суммарной стоимостью всех товаров
+        let infoPrice = this.rootBody.querySelector(`.cart-buttons__info-price`);
+        infoPrice.innerHTML = `€${this.getTotalPrice().toFixed(2)}`;
       }
     }
 
